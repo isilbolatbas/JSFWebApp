@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Facelet Title</title>
+</h:head>
+<h:body>
+
+
+	<h:form>
+		<center>
+			<h3>UZMAN OLMADAN DEĞİŞİKLİK YAPMAYINIZ</h3>
+			<h:panelGrid columns="2" cellpadding="5">
+	Yemek İsmi:   
+    <p:inputTextarea rows="1" cols="10" value="#{editx.anaIsmi}">
+
+				</p:inputTextarea>
+				<br></br>
+    
+    En Önemli Malzemesi:  
+    <p:inputTextarea rows="1" cols="10" value="#{editx.anaOnemli}">
+
+				</p:inputTextarea>
+				<br></br>
+    
+   Yemeğin Yöresi: 
+    <p:inputTextarea rows="1" cols="10" value="#{editx.anaYoresi}">
+
+				</p:inputTextarea>
+				<br></br>
+    
+   	Yemeğin Türü:
+    <p:inputTextarea rows="1" cols="10" value="#{editx.anaTuru}">
+
+				</p:inputTextarea>
+
+				<h:panelGrid columns="1" cellpadding="2">
+					<p:commandButton value="Update" action="#{editx.update}">
+						<f:param name="update_sl_no" value="#{editx.anaId}" />
+					</p:commandButton>
+
+				</h:panelGrid>
+
+
+			</h:panelGrid>
+
+		</center>
+
+	</h:form>
+
+</h:body>
+</html>

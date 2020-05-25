@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Ana Yemekler</title>
+
+</h:head>
+<h:body>
+
+	<h:form>
+		<h:panelGrid columns="2" cellpadding="5">
+	Yemek İsmi:   
+    <p:inputTextarea rows="1" cols="10" value="#{anayemekler.anaIsmi}">
+
+			</p:inputTextarea>
+			<br></br>
+    
+    En Önemli Malzemesi:  
+    <p:inputTextarea rows="1" cols="10" value="#{anayemekler.anaOnemli}">
+
+			</p:inputTextarea>
+			<br></br>
+    
+   Yemeğin Yöresi: 
+    <p:inputTextarea rows="1" cols="10" value="#{anayemekler.anaYoresi}">
+
+			</p:inputTextarea>
+			<br></br>
+    
+   	Yemeğin Türü:
+    <p:inputTextarea rows="1" cols="10" value="#{anayemekler.anaTuru}">
+
+			</p:inputTextarea>
+
+			<h:panelGrid columns="2" cellpadding="1">
+				<p:commandButton value="Ekle" action="#{anayemekler.insert}"
+					style="margin-right:20px;" />
+
+
+
+			</h:panelGrid>
+
+
+
+
+
+
+		</h:panelGrid>
+
+
+
+		<h3>YEMEK LİSTESİ</h3>
+		<h:dataTable id="singleDT" value="#{anayemekler.anaYemekler}"
+			var="ana" border="3">
+
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="Numara" />
+				</f:facet>
+				<h:outputText value="#{ana.anaId}" />
+			</p:column>
+
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="Yemek Ismi" />
+				</f:facet>
+				<h:outputText value="#{ana.anaIsmi}" />
+			</p:column>
+
+
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="Önemli Malzemesi" />
+				</f:facet>
+				<h:outputText value="#{ana.anaOnemli}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="Yemeğin Yöresi" />
+				</f:facet>
+				<h:outputText value="#{ana.anaYoresi}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="Yemeğin Türü" />
+				</f:facet>
+				<h:outputText value="#{ana.anaTuru}" />
+			</p:column>
+
+			<h:column>
+				<h:commandButton value="SİL"
+					action="#{anayemekler.delete(ana.anaId)}" class="btn btn-danger" />
+			</h:column>
+   <h:column>
+      <f:facet name="header">Edit</f:facet>
+      <h:commandButton value="Edit" action="#{anayemekler.duzenle}">
+        <f:param name="action" value="#{ana.anaId}" />
+      </h:commandButton>
+    </h:column>
+ 
+
+		</h:dataTable>
+
+
+	</h:form>
+
+
+
+</h:body>
+</html>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>LOGIN</title>
+
+	<style>
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+	border: 3px solid #f1f1f1;
+}
+
+input[type=text], input[type=password] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+
+commandbutton {
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+}
+
+commandbutton:hover {
+	opacity: 0.8;
+}
+
+.cancelbtn {
+	width: auto;
+	padding: 10px 18px;
+	background-color: #f44336;
+}
+
+.imgcontainer {
+	text-align: center;
+	margin: 24px 0 12px 0;
+}
+
+img.avatar {
+	width: 40%;
+	border-radius: 50%;
+}
+
+.container {
+	padding: 16px;
+}
+
+span.psw {
+	float: right;
+	padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+	span.psw {
+		display: block;
+		float: none;
+	}
+	.cancelbtn {
+		width: 100%;
+	}
+}
+</style>
+
+
+</h:head>
+<h:body style="background-color:	#37474F;">
+
+	<h:form
+		style="background-color: 		#607D8B; width: 600px; margin : 0 auto; border-color: 	#607D8B">
+		<center>
+
+			<h2 style="background-color: 	#607D8B; color:white; width: 600px;">LOGIN</h2>
+
+			<h:graphicImage style="width: 40%; border-radius: 50%;border: 1px solid #ddd;"
+				value="resources/image/img1.jpg" />
+
+
+			<h:panelGrid columns="2" cellpadding="1">
+
+				<h:outputText style="background-color: 	#607D8B; color:white" value="USERNAME"  />
+				<h:inputText
+					style="padding: 12px 20px;border: 1px solid #ccc;box-sizing: border-box;"
+					id="username" value="#{login.user}"></h:inputText>
+				<h:message for="username"></h:message>
+				<br />
+
+				<h:outputText style="background-color: 	#607D8B; color:white;" value="PASSWORD" />
+				<h:inputSecret
+					style="padding: 12px 20px;border: 1px solid #ccc;box-sizing: border-box;"
+					id="password" value="#{login.pwd}"></h:inputSecret>
+				<h:message for="password"></h:message>
+				<br></br>
+				
+
+				
+			</h:panelGrid>
+			<h:commandButton
+					style="background-color: 	#607D8B;padding: 16px 64px;margin: 8px 0; width: 50%;color: white; font-size: 16px;border-color:#90A4AE "
+					action="#{login.validateUsernamePassword}" value="Login"></h:commandButton>
+		</center>
+	</h:form>
+
+</h:body>
+</html>
