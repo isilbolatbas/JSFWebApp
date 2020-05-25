@@ -8,38 +8,39 @@
 <h:head>
 	<title>Facelet Title</title>
 </h:head>
-<h:body>
+<h:body style="background-color:	#37474F;">
 
 
 	<h:form>
 		<center>
-			<h3>UZMAN OLMADAN DEĞİŞİKLİK YAPMAYINIZ</h3>
+			<h3 style="color:white">UZMAN OLMADAN DEĞİŞİKLİK YAPMAYINIZ</h3>
 			<h:panelGrid columns="2" cellpadding="5">
-	Yemek İsmi:   
+<p:outputLabel style="color: white">Yemek İsmi:</p:outputLabel>
     <p:inputTextarea rows="1" cols="10" value="#{editx.anaIsmi}">
 
 				</p:inputTextarea>
-				<br></br>
+				
     
-    En Önemli Malzemesi:  
+    <p:outputLabel style="color: white">En Önemli Malzemesi:</p:outputLabel>
     <p:inputTextarea rows="1" cols="10" value="#{editx.anaOnemli}">
 
 				</p:inputTextarea>
-				<br></br>
+			
     
-   Yemeğin Yöresi: 
+  <p:outputLabel style="color: white"> Yemeğin Yöresi:</p:outputLabel>
     <p:inputTextarea rows="1" cols="10" value="#{editx.anaYoresi}">
 
 				</p:inputTextarea>
-				<br></br>
+				
     
-   	Yemeğin Türü:
+   	
+			<p:outputLabel style="color: white">  Yemeğin Türü:</p:outputLabel>
     <p:inputTextarea rows="1" cols="10" value="#{editx.anaTuru}">
 
 				</p:inputTextarea>
 
 				<h:panelGrid columns="1" cellpadding="2">
-					<p:commandButton value="Update" action="#{editx.update}">
+					<p:commandButton value="Update" action="#{editx.update}" style="margin-right:20px;background-color:#0097A7; color:white">
 						<f:param name="update_sl_no" value="#{editx.anaId}" />
 					</p:commandButton>
 

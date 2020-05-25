@@ -189,8 +189,8 @@ public class AnaYemekler implements Serializable {
 		Map<String, String> params = fc.getExternalContext().getRequestParameterMap();
 		String field_sl_no = params.get("action");
 
-		PreparedStatement ps = null;
-		Connection con = null;
+		PreparedStatement ps;
+		Connection con;
 
 		try {
 			con = DataConnect.getConnection();
@@ -218,8 +218,8 @@ public class AnaYemekler implements Serializable {
 		Map<String, String> params = fc.getExternalContext().getRequestParameterMap();
 		String update_sl_no = params.get("update_sl_no");
 
-		PreparedStatement ps = null;
-		Connection con = null;
+		PreparedStatement ps =null;
+		Connection con= null;
 
 		try {
 

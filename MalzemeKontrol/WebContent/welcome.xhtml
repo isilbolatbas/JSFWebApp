@@ -2,34 +2,75 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
  "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<title>Yemek Malzemeleri Kontrol Sistemi</title>
+
+
+
+
 </h:head>
-<h:body>
+<h:body style="background-color:	#37474F">
 	<p:tabMenu activeIndex="#{param.i}">
-    <p:menuitem value="Ana Yemekler" outcome="anayemekler.xhtml" icon="pi pi-star">
-        <f:param name="i" value="anayemek" />
-    </p:menuitem>
-    <p:menuitem value="Tatlılar" outcome="index.xhtml" icon="pi pi-search">
-        <f:param name="i" value="tatli" />
-    </p:menuitem>
-    <p:menuitem value="Çorbalar" outcome="index.xhtml" icon="pi pi-file">
-        <f:param name="i" value="corba" />
-    </p:menuitem>
-    <p:menuitem value="Ara Sıcaklar" outcome="index.xhtml" icon="pi pi-briefcase">
-        <f:param name="i" value="arasicak" />
-    </p:menuitem>
-    
-    
-    <p:menuitem value="Çıkış" url="index.xhtml" icon="pi pi-times" />
- 
-        <f:facet name="options">
-            <p:inputText style="margin:1px 1px 1px 10px;" placeholder="Search"/>
-            <p:commandButton type="button" value="Logout" icon="pi pi-home" />
-        </f:facet>
-</p:tabMenu>
+		<p:menuitem value="Ana Yemekler"
+			style="background-color:black; color:white"
+			outcome="anayemekler.xhtml" icon="pi pi-star">
+			<f:param name="i" value="anayemek" />
+		</p:menuitem>
+		<p:menuitem value="Tatlılar"
+			style="background-color:black; color:white" outcome="index.xhtml"
+			icon="pi pi-search">
+			<f:param name="i" value="tatli" />
+		</p:menuitem>
+		<p:menuitem value="Çorbalar"
+			style="background-color:black; color:white" outcome="index.xhtml"
+			icon="pi pi-file">
+			<f:param name="i" value="corba" />
+		</p:menuitem>
+		<p:menuitem value="Ara Sıcaklar"
+			style="background-color:black; color:white" outcome="index.xhtml"
+			icon="pi pi-briefcase">
+			<f:param name="i" value="arasicak" />
+		</p:menuitem>
+
+
+		<p:menuitem value="Çıkış" style="background-color:black; color:white"
+			url="index.xhtml" icon="pi pi-times" />
+
+
+
+	</p:tabMenu>
+
+	<h3 style="color: white">ANA YEMEKLER</h3>
+	<p:tabView value="#{anayemekler.anaYemekler}" var="ana"
+		style="background-color:black; color:white;">
+		<p:tab title="#{ana.anaIsmi}">
+
+			<h:panelGrid columns="2" cellpadding="5">
+				<f:facet name="header">
+					<p:graphicImage name="resources/image/img2.jpg" />
+				</f:facet>
+
+				<h:outputText value="Yemek İsmi:"
+					style="font-weight: bold; color:white" />
+				<h:outputText value="#{ana.anaIsmi}" style="color: white" />
+
+				<h:outputText value="Yemeğin Yöresi:"
+					style="font-weight: bold; color:white" />
+				<h:outputText value="#{ana.anaYoresi}" style="color: white" />
+
+				<h:outputText value="Yemeğin Olmazsa Olmazı:"
+					style="font-weight: bold; color:white" />
+				<h:outputText value="#{ana.anaOnemli}" style="color: white" />
+
+				<h:outputText value="Yemeğin Türü:"
+					style="font-weight: bold; color:white" />
+				<h:outputText value="#{ana.anaTuru}" style="color: white" />
+			</h:panelGrid>
+		</p:tab>
+	</p:tabView>
+
 </h:body>
 </html>
