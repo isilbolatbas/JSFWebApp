@@ -189,8 +189,8 @@ public class AnaYemekler implements Serializable {
 		Map<String, String> params = fc.getExternalContext().getRequestParameterMap();
 		String field_sl_no = params.get("action");
 
-		PreparedStatement ps;
-		Connection con;
+		PreparedStatement ps=null;
+		Connection con=null;
 
 		try {
 			con = DataConnect.getConnection();

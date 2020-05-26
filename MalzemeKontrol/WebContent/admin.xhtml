@@ -2,16 +2,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
  "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<title>Facelet Title</title>
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+	<meta name="viewport" content="width=Device-width, initial-scale=1" />
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<h:outputStylesheet library="css"
+		name="bootstrap.min.css" />
 </h:head>
 <h:body>
-	<h:form>
-		<p>Welcome #{login.user}</p>
-		<h:commandLink action="#{login.logout}" value="Logout"></h:commandLink>
-	</h:form>
+
 </h:body>
 </html>

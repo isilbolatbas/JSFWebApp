@@ -8,69 +8,119 @@
 <h:head>
 	<title>Yemek Malzemeleri Kontrol Sistemi</title>
 
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+	<meta name="viewport" content="width=Device-width, initial-scale=1" />
 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	 
+<style>
 
+.flo .ui-tabmenuitem:last-child{float: right;}
+
+</style>
 </h:head>
-<h:body style="background-color:	#37474F">
-	<p:tabMenu activeIndex="#{param.i}">
-		<p:menuitem value="Ana Yemekler"
-			style="background-color:black; color:white"
-			outcome="anayemekler.xhtml" icon="pi pi-star">
+<h:body
+	style="background-image: url(resources/image/med-food-hero.jpg); background-repeat: no-repeat; height:100%;">
+	<p:tabMenu activeIndex="#{param.i}"  >
+		<p:menuitem value="Çıkış"  containerStyle="float:right" style="background-color:red; color:white"
+			outcome="index.xhtml" icon="pi pi-star">
 			<f:param name="i" value="anayemek" />
 		</p:menuitem>
-		<p:menuitem value="Tatlılar"
+		<p:menuitem value="Tatlılar" containerStyle="float:right"
 			style="background-color:black; color:white" outcome="index.xhtml"
 			icon="pi pi-search">
 			<f:param name="i" value="tatli" />
 		</p:menuitem>
-		<p:menuitem value="Çorbalar"
+		<p:menuitem value="Çorbalar" containerStyle="float:right"
 			style="background-color:black; color:white" outcome="index.xhtml"
 			icon="pi pi-file">
 			<f:param name="i" value="corba" />
 		</p:menuitem>
-		<p:menuitem value="Ara Sıcaklar"
-			style="background-color:black; color:white" outcome="index.xhtml"
+		<p:menuitem value="Ara Sıcaklar" containerStyle="float:right"
+			style="background-color:black; color:white" outcome="admin.xhtml"
 			icon="pi pi-briefcase">
 			<f:param name="i" value="arasicak" />
 		</p:menuitem>
 
-
-		<p:menuitem value="Çıkış" style="background-color:black; color:white"
-			url="index.xhtml" icon="pi pi-times" />
-
+<p:menuitem value="Ana Yemekler" containerStyle="float:right"
+			style="background-color:black; color:white" outcome="anayemekler.xhtml"
+			icon="pi pi-briefcase">
+			<f:param name="i" value="sicak" />
+		</p:menuitem>
 
 
 	</p:tabMenu>
 
-	<h3 style="color: white">ANA YEMEKLER</h3>
-	<p:tabView value="#{anayemekler.anaYemekler}" var="ana"
-		style="background-color:black; color:white;">
-		<p:tab title="#{ana.anaIsmi}">
 
-			<h:panelGrid columns="2" cellpadding="5">
-				<f:facet name="header">
-					<p:graphicImage name="resources/image/img2.jpg" />
-				</f:facet>
+	<br></br>
 
-				<h:outputText value="Yemek İsmi:"
-					style="font-weight: bold; color:white" />
-				<h:outputText value="#{ana.anaIsmi}" style="color: white" />
 
-				<h:outputText value="Yemeğin Yöresi:"
-					style="font-weight: bold; color:white" />
-				<h:outputText value="#{ana.anaYoresi}" style="color: white" />
 
-				<h:outputText value="Yemeğin Olmazsa Olmazı:"
-					style="font-weight: bold; color:white" />
-				<h:outputText value="#{ana.anaOnemli}" style="color: white" />
 
-				<h:outputText value="Yemeğin Türü:"
-					style="font-weight: bold; color:white" />
-				<h:outputText value="#{ana.anaTuru}" style="color: white" />
-			</h:panelGrid>
-		</p:tab>
-	</p:tabView>
+
+	<p:panel id="basic" header="Adana Dürüm"
+		style="margin-bottom:20px;margin-right:100px;margin-left:100px;background-color:black;color:white; ">
+		<h:panelGrid columns="2" cellpadding="10">
+			<p:graphicImage
+				style="width: 150px;
+ height: 150px;margin-right:7px;"
+				value="/resources/image/img3.jpg" />
+
+			<h:outputText style="color:white;"
+				value="Adana kebabı[1], Adana'ya özgü, zırh adı verilen, satıra benzer bir bıçak ile elde kıyılan parça etten yapılan Türk mutfağında bir kebap çeşidi.
+
+Adana kebabını diğer kebaplardan ayıran en belirgin özellik kullanılan ettir. Et, doğal ortamda ve kendine has bir floraya sahip bölge yaylalarında yetiştirilmiş erkek koyunlardan elde edilmiş olmalıdır. Üretim tekniği ve ustalık da ürüne önemli ölçüde farklılık katar. Karışım hazırlanırken kullanılan malzemeler kırmızı pul biber, kuyruk yağıdır. Adana Kebabı'nın servisi, tamamlayıcı unsurlar olan yeşillik, sumaklı soğan salatası ve salatayla yapılmalıdır." />
+		</h:panelGrid>
+	</p:panel>
+
+
+
+
+
+	<p:panel header="Sebze Çorbası"
+		style="margin-bottom:20px;margin-left:100px;background-color:black;color:white ;margin-right:100px">
+		<h:panelGrid columns="2" cellpadding="10">
+			<p:graphicImage
+				style="width: 150px;
+ height: 150px;margin-right:7px;"
+				value="/resources/image/img5.jpg" />
+			<h:outputText style="color:white;"
+				value="Kalp krizinden korunmak için en beğendiğim yöntemi hiçbir tıbbi metinde bulamazsınız. Bu yöntemin adı sebze çorbaları. Birçok kişi bu çorbalara ‘minestrone’ der, fakat ben ‘medistron’ diyorum. Çünkü sebze çorbalarının en az besin değerleri kadar ilaç etkileri de var. Bu çorbaların belli bir tarifi yok. Yalnızca kendinizce uygun olan malzemeleri alıp birleştirerek, son derece lezzetli sayısız çorba yapabilirsiniz. En iyisi mevsim sebzeleriyle hazırlamak ve her seferinde küçük değişiklikler yapılmasıdır.
+					 Sebze ve meyveleri her öğününüzün parçası yapmanız gerekir." />
+		</h:panelGrid>
+	</p:panel>
+
+	<p:panel header="Sebze Çorbası"
+		style="margin-bottom:20px;margin-left:100px;background-color:black;color:white ;margin-right:100px">
+		<h:panelGrid columns="2" cellpadding="10">
+			<p:graphicImage
+				style="width: 150px;
+ height: 150px;margin-right:7px;"
+				value="/resources/image/img5.jpg" />
+			<h:outputText style="color:white;"
+				value="Kalp krizinden korunmak için en beğendiğim yöntemi hiçbir tıbbi metinde bulamazsınız. Bu yöntemin adı sebze çorbaları. Birçok kişi bu çorbalara ‘minestrone’ der, fakat ben ‘medistron’ diyorum. Çünkü sebze çorbalarının en az besin değerleri kadar ilaç etkileri de var. Bu çorbaların belli bir tarifi yok. Yalnızca kendinizce uygun olan malzemeleri alıp birleştirerek, son derece lezzetli sayısız çorba yapabilirsiniz. En iyisi mevsim sebzeleriyle hazırlamak ve her seferinde küçük değişiklikler yapılmasıdır.
+					 Sebze ve meyveleri her öğününüzün parçası yapmanız gerekir." />
+		</h:panelGrid>
+	</p:panel>
+	<p:panel header="Sebze Çorbası"
+		style="margin-bottom:20px;margin-left:100px;background-color:black;color:white ;margin-right:100px">
+		<h:panelGrid columns="2" cellpadding="10">
+			<p:graphicImage
+				style="width: 150px;
+ height: 150px;margin-right:7px;"
+				value="/resources/image/img5.jpg" />
+			<h:outputText style="color:white;"
+				value="Kalp krizinden korunmak için en beğendiğim yöntemi hiçbir tıbbi metinde bulamazsınız. Bu yöntemin adı sebze çorbaları. Birçok kişi bu çorbalara ‘minestrone’ der, fakat ben ‘medistron’ diyorum. Çünkü sebze çorbalarının en az besin değerleri kadar ilaç etkileri de var. Bu çorbaların belli bir tarifi yok. Yalnızca kendinizce uygun olan malzemeleri alıp birleştirerek, son derece lezzetli sayısız çorba yapabilirsiniz. En iyisi mevsim sebzeleriyle hazırlamak ve her seferinde küçük değişiklikler yapılmasıdır.
+					 Sebze ve meyveleri her öğününüzün parçası yapmanız gerekir." />
+		</h:panelGrid>
+	</p:panel>
+
+
+
+
+
 
 </h:body>
 </html>
