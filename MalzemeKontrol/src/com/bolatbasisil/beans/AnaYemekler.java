@@ -239,5 +239,10 @@ public class AnaYemekler implements Serializable {
 		}
 		return "/anayemekler.xhtml?faces-redirect=true";
 	}
+	
+	
+	public String listele() {
+		return "/anayemekler.xhtml?faces-redirect=true";
+	}
 
 }

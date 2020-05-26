@@ -15,35 +15,42 @@
 <h:body style="background-color:	#37474F;">
 
 	<h:form>
-		<h:panelGrid columns="2" cellpadding="5">
-			<p:outputLabel style="color: white">Yemek İsmi:</p:outputLabel>
+		<center>
+			<h:panelGrid columns="2" cellpadding="5">
+				<p:outputLabel style="color: white">Yemek İsmi:</p:outputLabel>
 
-			<p:inputTextarea rows="1" cols="10" value="#{anayemekler.anaIsmi}">
+				<p:inputTextarea rows="1" cols="10" value="#{anayemekler.anaIsmi}">
 
-			</p:inputTextarea>
-			
-			<p:outputLabel style="color: white">En Önemli Malzemesi:</p:outputLabel>
+				</p:inputTextarea>
 
-			<p:inputTextarea rows="1" cols="10" value="#{anayemekler.anaOnemli}">
+				<p:outputLabel style="color: white">En Önemli Malzemesi:</p:outputLabel>
 
-			</p:inputTextarea>
-			
-			<p:outputLabel style="color: white"> Yemeğin Yöresi:</p:outputLabel>
+				<p:inputTextarea rows="1" cols="10" value="#{anayemekler.anaOnemli}">
+
+				</p:inputTextarea>
+
+				<p:outputLabel style="color: white"> Yemeğin Yöresi:</p:outputLabel>
 
 
-			<p:inputTextarea rows="1" cols="10" value="#{anayemekler.anaYoresi}">
+				<p:inputTextarea rows="1" cols="10" value="#{anayemekler.anaYoresi}">
 
-			</p:inputTextarea>
-		
-			<p:outputLabel style="color: white">  Yemeğin Türü:</p:outputLabel>
+				</p:inputTextarea>
 
-			<p:inputTextarea rows="1" cols="10" value="#{anayemekler.anaTuru}">
+				<p:outputLabel style="color: white">  Yemeğin Türü:</p:outputLabel>
 
-			</p:inputTextarea>
+				<p:inputTextarea rows="1" cols="10" value="#{anayemekler.anaTuru}">
 
-			<h:panelGrid columns="2" cellpadding="1">
-				<p:commandButton value="Ekle" action="#{anayemekler.insert}"
-					style="margin-right:20px;background-color:#0097A7; color:white" />
+				</p:inputTextarea>
+
+				<h:panelGrid columns="2" cellpadding="1">
+					<p:commandButton value="Ekle" action="#{anayemekler.insert}"
+						style="margin-right:20px;background-color:#0097A7; color:white" />
+
+
+				</h:panelGrid>
+
+
+
 
 
 
@@ -51,66 +58,61 @@
 
 
 
+			<h3 style="color: white">YEMEK LİSTESİ</h3>
+			<h:dataTable id="singleDT" value="#{anayemekler.anaYemekler}"
+				var="ana" border="3" style="color:white; bordor-color:#37474F">
+
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Numara" />
+					</f:facet>
+					<h:outputText value="#{ana.anaId}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Yemek Ismi" />
+					</f:facet>
+					<h:outputText value="#{ana.anaIsmi}" />
+				</p:column>
 
 
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Önemli Malzemesi" />
+					</f:facet>
+					<h:outputText value="#{ana.anaOnemli}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Yemeğin Yöresi" />
+					</f:facet>
+					<h:outputText value="#{ana.anaYoresi}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Yemeğin Türü" />
+					</f:facet>
+					<h:outputText value="#{ana.anaTuru}" />
+				</p:column>
 
-		</h:panelGrid>
-
-
-
-		<h3 style="color:white">YEMEK LİSTESİ</h3>
-		<h:dataTable id="singleDT" value="#{anayemekler.anaYemekler}"
-			var="ana" border="3" style="color:white; bordor-color:#37474F">
-
-			<p:column>
-				<f:facet name="header">
-					<h:outputText value="Numara" />
-				</f:facet>
-				<h:outputText value="#{ana.anaId}" />
-			</p:column>
-
-			<p:column>
-				<f:facet name="header">
-					<h:outputText value="Yemek Ismi" />
-				</f:facet>
-				<h:outputText value="#{ana.anaIsmi}" />
-			</p:column>
-
-
-			<p:column>
-				<f:facet name="header">
-					<h:outputText value="Önemli Malzemesi" />
-				</f:facet>
-				<h:outputText value="#{ana.anaOnemli}" />
-			</p:column>
-			<p:column>
-				<f:facet name="header">
-					<h:outputText value="Yemeğin Yöresi" />
-				</f:facet>
-				<h:outputText value="#{ana.anaYoresi}" />
-			</p:column>
-			<p:column>
-				<f:facet name="header">
-					<h:outputText value="Yemeğin Türü" />
-				</f:facet>
-				<h:outputText value="#{ana.anaTuru}" />
-			</p:column>
-
-			<h:column>
-				<h:commandButton value="SİL"
-					action="#{anayemekler.delete(ana.anaId)}" style= "background-color:#0097A7; color:white" />
-			</h:column>
-			<h:column>
-				<f:facet name="header">Edit</f:facet>
-				<h:commandButton value="Edit" action="#{anayemekler.duzenle}" style= "background-color:#0097A7; color:white">
-					<f:param name="action" value="#{ana.anaId}" />
-				</h:commandButton>
-			</h:column>
+				<h:column>
+					<h:commandButton value="SİL"
+						action="#{anayemekler.delete(ana.anaId)}"
+						style="background-color:#0097A7; color:white" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Edit</f:facet>
+					<h:commandButton value="Edit" action="#{anayemekler.duzenle}"
+						style="background-color:#0097A7; color:white">
+						<f:param name="action" value="#{ana.anaId}" />
+					</h:commandButton>
+				</h:column>
 
 
-		</h:dataTable>
+			</h:dataTable>
 
-
+		</center>
 	</h:form>
 
 
