@@ -2,65 +2,21 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
  "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<title>Yemek Malzemeleri Kontrol Sistemi</title>
-
+	<title>ÖĞRENCİ</title>
 	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
 	<meta name="viewport" content="width=Device-width, initial-scale=1" />
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-	<h:outputStylesheet library="css" name="bootstrap.min.css" />
-	 
-<style>
-
-.flo .ui-tabmenuitem:last-child{float: right;}
-
-</style>
+	<h:outputStylesheet library="css"
+		name="bootstrap.min.css" />
 </h:head>
-<h:body
-	style="background-image: url(resources/image/med-food-hero.jpg); background-repeat: no-repeat; height:100%;width:100%">
-	<p:tabMenu activeIndex="#{param.i}"  >
-		<p:menuitem value="Çıkış"  containerStyle="float:right" style="background-color:red; color:white"
-			outcome="index.xhtml" icon="pi pi-star">
-			<f:param name="i" value="anayemek" />
-		</p:menuitem>
-		<p:menuitem value="Tatlılar" containerStyle="float:right"
-			style="background-color:#37474F; color:white" outcome="tatlilar.xhtml"
-			icon="pi pi-search">
-			<f:param name="i" value="tatli" />
-		</p:menuitem>
-		<p:menuitem value="Çorbalar" containerStyle="float:right"
-			style="background-color:#37474F; color:white" outcome="index.xhtml"
-			icon="pi pi-file">
-			<f:param name="i" value="corba" />
-		</p:menuitem>
-		<p:menuitem value="Ara Sıcaklar" containerStyle="float:right"
-			style="background-color:#37474F; color:white" outcome="admin.xhtml"
-			icon="pi pi-briefcase">
-			<f:param name="i" value="arasicak" />
-		</p:menuitem>
-
-<p:menuitem value="Ana Yemekler" containerStyle="float:right"
-			style="background-color:#37474F; color:white" outcome="anayemekler.xhtml"
-			icon="pi pi-briefcase">
-			<f:param name="i" value="sicak" />
-		</p:menuitem>
-
-
-	</p:tabMenu>
-
-
-	<br></br>
-
-
-
-
-
-	<p:panel id="basic" header="Adana Dürüm"
+<h:body style="background-image: url(resources/image/med-food-hero.jpg); background-repeat: no-repeat; height:100%;width:100%">
+<p:panel id="basic" header="Adana Dürüm"
 		style="margin-bottom:20px;margin-right:100px;margin-left:100px;background-color:#37474F;color:white; ">
 		<h:panelGrid columns="2" cellpadding="10">
 			<p:graphicImage
@@ -116,11 +72,6 @@ Adana kebabını diğer kebaplardan ayıran en belirgin özellik kullanılan ett
 					 Sebze ve meyveleri her öğününüzün parçası yapmanız gerekir." />
 		</h:panelGrid>
 	</p:panel>
-
-
-
-
-
 
 </h:body>
 </html>

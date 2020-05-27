@@ -44,59 +44,61 @@ th {
 
 	<h:form>
 
-<center>
+		<center>
 
-		<h:panelGrid columns="3" cellpadding="1" style="width:500px; ">
-			<p:panel style="border-color:white">
-				<h:panelGrid columns="2" cellpadding="1" style="width:500px; ">
-					<p:outputLabel style="color: black; ">Yemek İsmi:</p:outputLabel>
+			<h:panelGrid columns="3" cellpadding="1" style="width:500px; ">
+				<p:panel style="border-color:white">
+					<h:panelGrid columns="2" cellpadding="1" style="width:500px; ">
+						<p:outputLabel style="color: black; ">Yemek İsmi:</p:outputLabel>
 
-					<p:inputTextarea rows="1" cols="10" value="#{anayemekler.anaIsmi}">
+						<p:inputTextarea rows="1" cols="10" value="#{anayemekler.anaIsmi}">
 
-					</p:inputTextarea>
+						</p:inputTextarea>
 
-					<p:outputLabel style="color: black">En Önemli Malzemesi:</p:outputLabel>
+						<p:outputLabel style="color: black">En Önemli Malzemesi:</p:outputLabel>
 
-					<p:inputTextarea rows="1" cols="10"
-						value="#{anayemekler.anaOnemli}">
+						<p:inputTextarea rows="1" cols="10"
+							value="#{anayemekler.anaOnemli}">
 
-					</p:inputTextarea>
+						</p:inputTextarea>
 
-					<p:outputLabel style="color: black"> Yemeğin Yöresi:</p:outputLabel>
-
-
-					<p:inputTextarea rows="1" cols="10"
-						value="#{anayemekler.anaYoresi}">
-
-					</p:inputTextarea>
-
-					<p:outputLabel style="color: black">  Yemeğin Türü:</p:outputLabel>
-
-					<p:inputTextarea rows="1" cols="10" value="#{anayemekler.anaTuru}">
-
-					</p:inputTextarea>
-
-					<h:panelGrid columns="2" cellpadding="1">
-						<p:commandButton value="Ekle" action="#{anayemekler.insert}"
-							style="margin-right:20px;background-color:#0097A7; color:white" />
+						<p:outputLabel style="color: black"> Yemeğin Yöresi:</p:outputLabel>
 
 
+						<p:inputTextarea rows="1" cols="10"
+							value="#{anayemekler.anaYoresi}">
+
+						</p:inputTextarea>
+
+						<p:outputLabel style="color: black">  Yemeğin Türü:</p:outputLabel>
+
+						<p:inputTextarea rows="1" cols="10" value="#{anayemekler.anaTuru}">
+
+						</p:inputTextarea>
+
+						<h:panelGrid columns="2" cellpadding="1">
+
+							<p:commandButton value="Ekle" action="#{anayemekler.insert}"
+								style="margin-right:20px;background-color:#0097A7;width:100%; color:white" />
+
+							<p:commandButton value="Listele" action="#{anayemekler.listele}"
+								style="margin-right:20px;width:100%; background-color:#0097A7; color:white"  />
+						</h:panelGrid>
 					</h:panelGrid>
-				</h:panelGrid>
 
-			</p:panel>
+				</p:panel>
 
-			<p:panel style="border-color:white">
-				<p:graphicImage
-					style="width: 300px;
+				<p:panel style="border-color:white">
+					<p:graphicImage
+						style="width: 300px;
  height: 250px;margin-right:7px;"
-					value="/resources/image/img5.jpg" />
-			</p:panel>
+						value="/resources/image/img5.jpg" />
+				</p:panel>
 
 
-		</h:panelGrid>
+			</h:panelGrid>
 
-</center>
+		</center>
 
 		<h3 style="color: white">YEMEK LİSTESİ</h3>
 		<h:dataTable id="singleDT" value="#{anayemekler.anaYemekler}"
@@ -143,9 +145,9 @@ th {
 					class="btn btn-danger" />
 			</h:column>
 			<h:column>
-				<f:facet name="header">Edit</f:facet>
-				<h:commandButton value="Edit" action="#{anayemekler.duzenle}"
-					style=" color:white" class="btn btn-primary">
+				<f:facet name="header">Düzenle</f:facet>
+				<h:commandButton value="Düzenle" action="#{anayemekler.duzenle}"
+					style=" color:white;" class="btn btn-primary">
 					<f:param name="action" value="#{ana.anaId}" />
 				</h:commandButton>
 			</h:column>

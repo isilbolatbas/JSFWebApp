@@ -9,6 +9,7 @@ import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
 import com.bolatbasisil.dao.LoginDAO;
+import com.bolatbasisil.dao.OgrenciLoginDAO;
 
 @ManagedBean
 @SessionScoped
@@ -66,5 +67,26 @@ private static final long serialVersionUID = 1094801825228386363L;
 			session.invalidate();
 			return "login";
 		}
-
+		
+		public String validateOgrenci() {
+			boolean valid = OgrenciLoginDAO.validateOgrenci(user, pwd);
+			if (valid) {
+				HttpSession session = SessionBean.getSession();
+				session.setAttribute("username", user);
+				return "ogrenci";
+			} else {
+				FacesContext.getCurrentInstance().addMessage(
+						null,
+						new FacesMessage(FacesMessage.SEVERITY_WARN,
+								"Incorrect Username and Passowrd",
+								"Please enter correct username and Password"));
+				return "login";
+			}
+		}
+		
+		//logout event, invalidate session
+	
+	
+		
+		
 }

@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Facelet Title</title>
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+	<meta name="viewport" content="width=Device-width, initial-scale=1" />
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+
+
+
+	<h:outputStylesheet library="css"
+		name="/resources/css/bootstrap.min.css" />
+	<style type="text/css">
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td {
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2
+}
+
+th {
+	background-color: #4CAF50;
+	color: white;
+}
+</style>
+</h:head>
+<h:body>
+
+	<center>
+		<h:form>
+			<h:panelGrid columns="3" cellpadding="1" style="width:500px; ">
+				<p:panel style="border-color:white">
+					<h:panelGrid columns="2" cellpadding="1" style="width:500px; ">
+						<p:outputLabel style="color: black; ">Tatlı İsmi:</p:outputLabel>
+
+						<p:inputTextarea rows="1" cols="10" value="#{tatlilar.tatliIsmi}">
+
+						</p:inputTextarea>
+
+						<p:outputLabel style="color: black">Tatli Sekeri:</p:outputLabel>
+
+						<p:inputTextarea rows="1" cols="10"
+							value="#{tatlilar.tatliSekeri}">
+
+						</p:inputTextarea>
+
+						<p:outputLabel style="color: black">Tatlının Önemli Malzemesi:</p:outputLabel>
+
+
+						<p:inputTextarea rows="1" cols="10"
+							value="#{tatlilar.tatliOnemli}">
+
+						</p:inputTextarea>
+
+						<p:outputLabel style="color: black">Tatlı Yöresi:</p:outputLabel>
+
+						<p:inputTextarea rows="1" cols="10"
+							value="#{tatlilar.tatliYoresi}">
+
+						</p:inputTextarea>
+						<p:outputLabel style="color: black">Tatlı Turu:</p:outputLabel>
+
+						<p:inputTextarea rows="1" cols="10" value="#{tatlilar.tatliTuru}">
+
+						</p:inputTextarea>
+
+						<h:panelGrid columns="2" cellpadding="1">
+
+							<p:commandButton value="Ekle" action="#{tatlilar.insert}"
+								style="margin-right:20px;background-color:#0097A7;width:100%; color:white" />
+
+
+						</h:panelGrid>
+					</h:panelGrid>
+
+				</p:panel>
+			</h:panelGrid>
+		</h:form>
+	</center>
+
+	
+
+
+
+</h:body>
+</html>
