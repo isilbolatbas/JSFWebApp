@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Facelet Title</title>
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+	<meta name="viewport" content="width=Device-width, initial-scale=1" />
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</h:head>
+<h:body>
+	<div class="jumbotron text-center">
+		<h1>ÇORBALAR</h1>
+		<p>Kökeni Sanskritçe’den gelen İngilizce çorba kelimesi, ‘iyi beslenme’ anlamı taşır.</p>
+	</div>
+<h:form>	
+	<center>
+
+			<h:panelGrid columns="3" cellpadding="1" style="width:500px; ">
+				<p:panel style="border-color:white">
+					<h:panelGrid columns="2" cellpadding="1" style="width:500px; ">
+						<p:outputLabel style="color: black; ">Çobra İsmi:</p:outputLabel>
+
+						<p:inputTextarea rows="1" cols="10" value="#{corbalar.corbaIsmi}">
+
+						</p:inputTextarea>
+
+						<p:outputLabel style="color: black">En Önemli Malzemesi:</p:outputLabel>
+
+						<p:inputTextarea rows="1" cols="10"
+							value="#{corbalar.corbaMalzemesi}">
+
+						</p:inputTextarea>
+
+						<p:outputLabel style="color: black">Çorbanın Yöresi:</p:outputLabel>
+
+
+						<p:inputTextarea rows="1" cols="10"
+							value="#{corbalar.corbaYoresi}">
+
+						</p:inputTextarea>
+
+						<p:outputLabel style="color: black">Çorbanın Türü:</p:outputLabel>
+
+						<p:inputTextarea rows="1" cols="10" value="#{corbalar.corbaTuru}">
+
+						</p:inputTextarea>
+
+						<h:panelGrid columns="2" cellpadding="1">
+
+							<p:commandButton value="Ekle" action="#{corbalar.insert}"
+								style="margin-right:20px;background-color:#0097A7;width:80%; color:white" />
+
+							<p:commandButton value="Listele" action="#{corbalar.listele}"
+								style="margin-right:20px;width:100%; background-color:#0097A7; color:white"  />
+						</h:panelGrid>
+					</h:panelGrid>
+
+				</p:panel>
+
+				<p:panel style="border-color:white">
+					<p:graphicImage
+						style="width: 300px;
+ height: 250px;margin-right:7px;"
+						value="/resources/image/img10.jpg" />
+				</p:panel>
+
+
+			</h:panelGrid>
+
+		</center>
+	</h:form>
+	
+
+	<div class="container">
+		<p>Aramak istediğiniz özellikteki çorbayı yazınız</p>
+		<input class="form-control" id="myInput" type="text"
+			placeholder="Ara.."></input> <br></br>
+
+	</div>
+
+
+	<h:dataTable id="singleDT" value="#{corbalar.corbalar}" var="ana"
+		border="3" class="table table-bordered table-striped">
+
+		<p:column>
+			<f:facet name="header">
+				<h:outputText style="text-align:center;" value="Numara" />
+			</f:facet>
+			<h:outputText value="#{ana.corbaId}" />
+		</p:column>
+
+		<p:column>
+			<f:facet name="header">
+				<h:outputText value="Çorba Ismi" />
+			</f:facet>
+			<h:outputText value="#{ana.corbaIsmi}" />
+		</p:column>
+
+
+		<p:column>
+			<f:facet name="header">
+				<h:outputText value="Önemli Malzemesi" />
+			</f:facet>
+			<h:outputText value="#{ana.corbaMalzemesi}" />
+		</p:column>
+		<p:column>
+			<f:facet name="header">
+				<h:outputText value="Çorbanın Yöresi" />
+			</f:facet>
+			<h:outputText value="#{ana.corbaYoresi}" />
+		</p:column>
+		<p:column>
+			<f:facet name="header">
+				<h:outputText value="Çorbanın Türü" />
+			</f:facet>
+			<h:outputText value="#{ana.corbaTuru}" />
+		</p:column>
+	</h:dataTable>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#singleDT tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+</h:body>
+</html>

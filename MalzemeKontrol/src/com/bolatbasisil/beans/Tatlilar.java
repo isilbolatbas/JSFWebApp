@@ -61,12 +61,6 @@ public class Tatlilar extends HttpServlet {
 		this.tatliYoresi = tatliYoresi;
 	}
 	
-	public Tatlilar(String tatliIsmi ,String tatliTuru) {
-		this.tatliIsmi = tatliIsmi;
-		this.tatliTuru = tatliTuru;
-
-
-		}
 	
 	
 	public String insert() throws SQLException {
