@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -23,6 +25,13 @@ public class Tatlilar extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	private String tatliId;
+	public String getTatliId() {
+		return tatliId;
+	}
+	public void setTatliId(String tatliId) {
+		this.tatliId = tatliId;
+	}
 	private String tatliIsmi;
 	private String tatliSekeri;
 	private String tatliOnemli;
@@ -110,6 +119,49 @@ public class Tatlilar extends HttpServlet {
 		return "Eklendi";
 
 	}
+	public List<Tatlilar> getTatlilar() throws ClassNotFoundException, SQLException {
+
+		Connection con = null;
+		PreparedStatement ps = null;
+
+		try {
+
+			con = DataConnect.getConnection();
+			ps = con.prepareStatement("select * from tatli");
+
+		} catch (SQLException ex) {
+			System.out.println("in exec");
+			System.out.println(ex.getMessage());
+		}
+		List<Tatlilar> tatlilar = new ArrayList<Tatlilar>();
+
+		ResultSet rs = ps.executeQuery();
+		while (rs.next()) {
+
+			Tatlilar ana = new Tatlilar();
+
+			ana.setTatliId(rs.getString("tid"));
+			ana.setTatliIsmi(rs.getString("tIsmi"));
+			ana.setTatliSekeri(rs.getString("tSekeri"));
+			ana.setTatliOnemli(rs.getString("tOnemli"));
+			ana.setTatliTuru(rs.getString("tTuru"));
+			ana.setTatliYoresi(rs.getString("tYoresi"));
+
+			tatlilar.add(ana);
+
+		}
+		con.close();
+		ps.close();
+		rs.close();
+
+		return tatlilar;
+
+	}
+	
+	public String listele() {
+		return "/tatlilar.xhtml?faces-redirect=true";
+	}
+	
 	
 	
 

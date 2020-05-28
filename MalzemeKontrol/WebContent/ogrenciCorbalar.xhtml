@@ -22,50 +22,9 @@
 		<h1>ÇORBALAR</h1>
 		<p>Kökeni Sanskritçe’den gelen İngilizce çorba kelimesi, ‘iyi beslenme’ anlamı taşır.</p>
 	</div>
-<h:form>	
+	
 	<center>
 
-			<h:panelGrid columns="3" cellpadding="1" style="width:500px; ">
-				<p:panel style="border-color:white">
-					<h:panelGrid columns="2" cellpadding="1" style="width:500px; ">
-						<p:outputLabel style="color: black; ">Çobra İsmi:</p:outputLabel>
-
-						<p:inputTextarea rows="1" cols="10" value="#{corbalar.corbaIsmi}" style="margin-bottom:7px;">
-
-						</p:inputTextarea>
-
-						<p:outputLabel style="color: black">En Önemli Malzemesi:</p:outputLabel>
-
-						<p:inputTextarea rows="1" cols="10"
-							value="#{corbalar.corbaMalzemesi}" style="margin-bottom:7px;">
-
-						</p:inputTextarea>
-
-						<p:outputLabel style="color: black">Çorbanın Yöresi:</p:outputLabel>
-
-
-						<p:inputTextarea rows="1" cols="10"
-							value="#{corbalar.corbaYoresi}" style="margin-bottom:7px;">
-
-						</p:inputTextarea>
-
-						<p:outputLabel style="color: black">Çorbanın Türü:</p:outputLabel>
-
-						<p:inputTextarea rows="1" cols="10" value="#{corbalar.corbaTuru}" style="margin-bottom:7px;">
-
-						</p:inputTextarea>
-
-						<h:panelGrid columns="2" cellpadding="1">
-
-							<p:commandButton value="Ekle" action="#{corbalar.insert}"
-								style="margin-right:20px;background-color:#0097A7;width:80%; color:white" />
-
-							<p:commandButton value="Listele" action="#{corbalar.listele}"
-								style="margin-right:20px;width:100%; background-color:#0097A7; color:white"  />
-						</h:panelGrid>
-					</h:panelGrid>
-
-				</p:panel>
 
 				<p:panel style="border-color:white">
 					<p:graphicImage
@@ -74,11 +33,8 @@
 						value="/resources/image/img10.jpg" />
 				</p:panel>
 
-
-			</h:panelGrid>
-
-		</center>
-	</h:form>
+</center>
+		
 	
 
 	<div class="container">

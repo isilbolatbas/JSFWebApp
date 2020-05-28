@@ -80,13 +80,13 @@ span.psw {
 
 
 </h:head>
-<h:body style="background-color:	#37474F;">
+<h:body style="background-color:	#212121;">
 
 	<h:form
-		style="background-color: 		#607D8B; width: 600px; margin : 0 auto; border-color: 	#607D8B">
+		style="background-color: 		#424242; width: 600px; margin : 0 auto; border-color: 	#424242">
 		<center>
 
-			<h2 style="background-color: 	#607D8B; color:white; width: 600px;">LOGIN</h2>
+			<h2 style="background-color: 	#424242; color:white; width: 600px;">LOGIN</h2>
 
 			<h:graphicImage style="width: 40%; border-radius: 50%;border: 1px solid #ddd;"
 				value="resources/image/img1.jpg" />
@@ -94,14 +94,14 @@ span.psw {
 
 			<h:panelGrid columns="2" cellpadding="1">
 
-				<h:outputText style="background-color: 	#607D8B; color:white" value="USERNAME"  />
+				<h:outputText style="background-color: #424242; color:white" value="USERNAME"  />
 				<h:inputText
 					style="padding: 12px 20px;border: 1px solid #ccc;box-sizing: border-box;"
 					id="username" value="#{login.user}"></h:inputText>
 				<h:message for="username"></h:message>
 				<br />
 
-				<h:outputText style="background-color: 	#607D8B; color:white;" value="PASSWORD" />
+				<h:outputText style="background-color: 	#424242; color:white;" value="PASSWORD" />
 				<h:inputSecret
 					style="padding: 12px 20px;border: 1px solid #ccc;box-sizing: border-box;"
 					id="password" value="#{login.pwd}"></h:inputSecret>
@@ -112,10 +112,10 @@ span.psw {
 				
 			</h:panelGrid>
 			<h:commandButton
-					style="background-color: 	#607D8B;padding: 16px 64px;margin: 8px 0; width: 50%;color: white; font-size: 16px;border-color:#90A4AE "
+					style="background-color: 	#424242;padding: 16px 64px;margin: 8px 0; width: 50%;color: white; font-size: 16px;border-color:#90A4AE "
 					action="#{login.validateUsernamePassword}" value="Login"></h:commandButton><br />
 			<h:commandButton
-					style="background-color: 	#607D8B;padding: 16px 64px;margin: 8px 0; width: 50%;color: white; font-size: 16px;border-color:#90A4AE "
+					style="background-color: 	#424242;padding: 16px 64px;margin: 8px 0; width: 50%;color: white; font-size: 16px;border-color:#90A4AE "
 					action="#{login.validateOgrenci}" value="Öğrenci Login"></h:commandButton>
 		</center>
 	</h:form>

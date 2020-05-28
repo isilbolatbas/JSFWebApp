@@ -2,76 +2,134 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
  "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<title>ÖĞRENCİ</title>
+	<title>Yemek Malzemeleri Kontrol Sistemi</title>
+
 	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
 	<meta name="viewport" content="width=Device-width, initial-scale=1" />
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-	<h:outputStylesheet library="css"
-		name="bootstrap.min.css" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+
+	<style>
+.flo .ui-tabmenuitem:last-child {
+	float: right;
+}
+</style>
 </h:head>
-<h:body style="background-image: url(resources/image/med-food-hero.jpg); background-repeat: no-repeat; height:100%;width:100%">
-<p:panel id="basic" header="Adana Dürüm"
-		style="margin-bottom:20px;margin-right:100px;margin-left:100px;background-color:#37474F;color:white; ">
-		<h:panelGrid columns="2" cellpadding="10">
-			<p:graphicImage
-				style="width: 150px;
- height: 150px;margin-right:7px;"
-				value="/resources/image/img3.jpg" />
-
-			<h:outputText style="color:white;"
-				value="Adana kebabı[1], Adana'ya özgü, zırh adı verilen, satıra benzer bir bıçak ile elde kıyılan parça etten yapılan Türk mutfağında bir kebap çeşidi.
-
-Adana kebabını diğer kebaplardan ayıran en belirgin özellik kullanılan ettir. Et, doğal ortamda ve kendine has bir floraya sahip bölge yaylalarında yetiştirilmiş erkek koyunlardan elde edilmiş olmalıdır. Üretim tekniği ve ustalık da ürüne önemli ölçüde farklılık katar. Karışım hazırlanırken kullanılan malzemeler kırmızı pul biber, kuyruk yağıdır. Adana Kebabı'nın servisi, tamamlayıcı unsurlar olan yeşillik, sumaklı soğan salatası ve salatayla yapılmalıdır." />
-		</h:panelGrid>
-	</p:panel>
+<h:body
+	style="background-color:#D7DBDD">
 
 
+	<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">Malzeme Kontrol</a>
+		</div>
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="#">Home</a></li>
+			<li><a href="ogrenciAnayemekler.xhtml">Ana Yemekler</a></li>
+			<li><a href="ogrenciCorbalar.xhtml">Çorbalar</a></li>
+			<li><a href="ogrenciTatlilar.xhtml">Tatlılar</a></li>
+			
+
+		</ul>
+
+		<ul class="nav navbar-nav navbar-right">
+
+			<li><a href="index.xhtml"><span
+					class="glyphicon glyphicon-log-in"></span> Çıkış</a></li>
+		</ul>
+	</div>
+	</nav>
 
 
 
-	<p:panel header="Sebze Çorbası"
-		style="margin-bottom:20px;margin-left:100px;background-color:#37474F;color:white ;margin-right:100px">
-		<h:panelGrid columns="2" cellpadding="10">
-			<p:graphicImage
-				style="width: 150px;
- height: 150px;margin-right:7px;"
-				value="/resources/image/img5.jpg" />
-			<h:outputText style="color:white;"
-				value="Kalp krizinden korunmak için en beğendiğim yöntemi hiçbir tıbbi metinde bulamazsınız. Bu yöntemin adı sebze çorbaları. Birçok kişi bu çorbalara ‘minestrone’ der, fakat ben ‘medistron’ diyorum. Çünkü sebze çorbalarının en az besin değerleri kadar ilaç etkileri de var. Bu çorbaların belli bir tarifi yok. Yalnızca kendinizce uygun olan malzemeleri alıp birleştirerek, son derece lezzetli sayısız çorba yapabilirsiniz. En iyisi mevsim sebzeleriyle hazırlamak ve her seferinde küçük değişiklikler yapılmasıdır.
-					 Sebze ve meyveleri her öğününüzün parçası yapmanız gerekir." />
-		</h:panelGrid>
-	</p:panel>
+	<br></br>
 
-	<p:panel header="Sebze Çorbası"
-		style="margin-bottom:20px;margin-left:100px;background-color:#37474F;color:white ;margin-right:100px">
-		<h:panelGrid columns="2" cellpadding="10">
-			<p:graphicImage
-				style="width: 150px;
- height: 150px;margin-right:7px;"
-				value="/resources/image/img5.jpg" />
-			<h:outputText style="color:white;"
-				value="Kalp krizinden korunmak için en beğendiğim yöntemi hiçbir tıbbi metinde bulamazsınız. Bu yöntemin adı sebze çorbaları. Birçok kişi bu çorbalara ‘minestrone’ der, fakat ben ‘medistron’ diyorum. Çünkü sebze çorbalarının en az besin değerleri kadar ilaç etkileri de var. Bu çorbaların belli bir tarifi yok. Yalnızca kendinizce uygun olan malzemeleri alıp birleştirerek, son derece lezzetli sayısız çorba yapabilirsiniz. En iyisi mevsim sebzeleriyle hazırlamak ve her seferinde küçük değişiklikler yapılmasıdır.
-					 Sebze ve meyveleri her öğününüzün parçası yapmanız gerekir." />
-		</h:panelGrid>
-	</p:panel>
-	<p:panel header="Sebze Çorbası"
-		style="margin-bottom:20px;margin-left:100px;background-color:#37474F;color:white ;margin-right:100px">
-		<h:panelGrid columns="2" cellpadding="10">
-			<p:graphicImage
-				style="width: 150px;
- height: 150px;margin-right:7px;"
-				value="/resources/image/img5.jpg" />
-			<h:outputText style="color:white;"
-				value="Kalp krizinden korunmak için en beğendiğim yöntemi hiçbir tıbbi metinde bulamazsınız. Bu yöntemin adı sebze çorbaları. Birçok kişi bu çorbalara ‘minestrone’ der, fakat ben ‘medistron’ diyorum. Çünkü sebze çorbalarının en az besin değerleri kadar ilaç etkileri de var. Bu çorbaların belli bir tarifi yok. Yalnızca kendinizce uygun olan malzemeleri alıp birleştirerek, son derece lezzetli sayısız çorba yapabilirsiniz. En iyisi mevsim sebzeleriyle hazırlamak ve her seferinde küçük değişiklikler yapılmasıdır.
-					 Sebze ve meyveleri her öğününüzün parçası yapmanız gerekir." />
-		</h:panelGrid>
-	</p:panel>
+	<div class="container">
+	<div class="row">
+	<div class="col-sm-4">
+		<div class="panel panel-default">
+			<div class="panel-heading">Adana Kebap</div>
+			<div class="panel-body"  style="background-color:black;color:white">
+				<h:panelGrid columns="1" cellpadding="10">
+					<p:graphicImage
+						style="width: 150px;
+ height: 150px;margin-left:30%;align:center;border-radius: 50%;border-color:white;"
+						value="/resources/image/img3.jpg" />
+					<p>Adana kebabı[1], Adana'ya özgü, zırh adı verilen, satıra
+						benzer bir bıçak ile elde kıyılan parça etten yapılan Türk
+						mutfağında bir kebap çeşidi. Adana kebabını diğer kebaplardan
+						ayıran en belirgin özellik kullanılan ettir. Et, doğal ortamda ve
+						kendine has bir floraya sahip bölge yaylalarında yetiştirilmiş
+						erkek koyunlardan elde edilmiş olmalıdır. Üretim tekniği ve
+						ustalık da ürüne önemli ölçüde farklılık katar. Karışım
+						hazırlanırken kullanılan malzemeler kırmızı pul biber, kuyruk
+						yağıdır. Adana Kebabı'nın servisi, tamamlayıcı unsurlar olan
+						yeşillik, sumaklı soğan salatası ve salatayla yapılmalıdır.</p>
+				</h:panelGrid>
+			</div>
+</div>
+
+
+		</div>
+<div class="col-sm-4">
+		<div class="panel panel-default"  style="background-color:black;color:white">
+			<div class="panel-heading">Sebze Çorbası</div>
+			<div class="panel-body">
+				<h:panelGrid columns="1" cellpadding="10">
+					<p:graphicImage
+						style="width: 150px;
+ height: 150px;margin-left:30%;align:center;border-radius: 50%;border-color:white;"
+						value="/resources/image/img5.jpg" />
+					<p>Kalp krizinden korunmak için en beğendiğim yöntemi hiçbir
+						tıbbi metinde bulamazsınız. Bu yöntemin adı sebze çorbaları.
+						Birçok kişi bu çorbalara ‘minestrone’ der, fakat ben ‘medistron’
+						diyorum. Çünkü sebze çorbalarının en az besin değerleri kadar ilaç
+						etkileri de var. Bu çorbaların belli bir tarifi yok. Yalnızca
+						kendinizce uygun olan malzemeleri alıp birleştirerek, son derece
+						lezzetli sayısız çorba yapabilirsiniz. En iyisi mevsim
+						sebzeleriyle hazırlamak ve her seferinde küçük değişiklikler
+						yapılmasıdır. Sebze ve meyveleri her öğününüzün parçası yapmanız
+						gerekir.</p>
+				</h:panelGrid>
+			</div>
+
+
+
+		</div>
+</div>
+<div class="col-sm-4">
+		<div class="panel panel-default">
+			<div class="panel-heading">Künefe</div>
+			<div class="panel-body" style="background-color:black;color:white">
+				<h:panelGrid columns="1" cellpadding="10">
+				
+					<p:graphicImage 
+						style="width: 150px;
+ height: 150px;margin-left:30%;align:center;border-radius: 50%;border-color:white;"
+						value="/resources/image/kunefe.jpg" />
+					<p>Künefenin birden fazla çeşidi olmasına rağmen genel yapılış yöntemi aynıdır. İki katman kadayıf arasına tuzsuz bir cins peynir koyularak hafifçe pişirilir ve üzerine çok koyulaşmamış şeker şurubu katılır.
+
+Yapılışındaki değişikler başlıca kadayıfın ve peynirin türünden kaynaklanır. Tel kadayıf kullanılabildıği gibi, irmikle toklaştırılmış kadayıf da kullanılabilir. Peynir olarak Hatay peyniri, lor peyniri, Antep peyniri, Urfa peyniri gibi çiğ süte daha yakın, taze peynirler kullanılır. Bu tür peynirlerin hem elde etmesi hem de yıkayıp taze tutması zor olabileceği için kolaylaştırılmıştır.</p>
+				</h:panelGrid>
+			</div>
+
+
+
+		</div>
+
+</div>
+</div>
+	</div>
+
+
 
 </h:body>
 </html>

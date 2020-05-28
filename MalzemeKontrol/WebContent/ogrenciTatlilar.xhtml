@@ -24,65 +24,9 @@
 		<h1>TATLILAR</h1>
 		<p>Acı olmayan, içilebilen, yenilebilen...</p>
 	</div>
-	<h:form>
+
 		<center>
 
-			<h:panelGrid columns="3" cellpadding="1" style="width:500px; ">
-				<p:panel style="border-color:white">
-					<h:panelGrid columns="2" cellpadding="1" style="width:500px; ">
-						<p:outputLabel style="color: black; ">Tatlı İsmi:</p:outputLabel>
-
-						<p:inputTextarea rows="1" cols="10" value="#{tatlilar.tatliIsmi}"
-							style="margin-bottom:7px;">
-
-						</p:inputTextarea>
-
-						<p:outputLabel style="color: black">Tatlının Malzemesi:</p:outputLabel>
-
-						<p:inputTextarea rows="1" cols="10"
-							value="#{tatlilar.tatliOnemli}" style="margin-bottom:7px;">
-
-						</p:inputTextarea>
-
-						<p:outputLabel style="color: black">Tatlının Yöresi:</p:outputLabel>
-
-
-						<p:inputTextarea rows="1" cols="10"
-							value="#{tatlilar.tatliYoresi}" style="margin-bottom:7px;">
-
-						</p:inputTextarea>
-
-						<p:outputLabel style="color: black">Tatlının Türü:</p:outputLabel>
-
-						<p:inputTextarea rows="1" cols="10" value="#{tatlilar.tatliTuru}"
-							style="margin-bottom:7px;">
-
-						</p:inputTextarea>
-							<p:outputLabel style="color: black">Tatlının Şekeri:</p:outputLabel>
-
-						<p:inputTextarea rows="1" cols="10" value="#{tatlilar.tatliSekeri}"
-							style="margin-bottom:7px;">
-
-						</p:inputTextarea>
-
-						<p:outputLabel style="color: black">Tatlının Yöresi:</p:outputLabel>
-
-						<p:inputTextarea rows="1" cols="10" value="#{tatlilar.tatliTuru}"
-							style="margin-bottom:7px;">
-
-						</p:inputTextarea>
-
-						<h:panelGrid columns="2" cellpadding="1">
-
-							<p:commandButton value="Ekle" action="#{tatlilar.insert}"
-								style="margin-right:20px;background-color:#0097A7;width:80%; color:white" />
-
-							<p:commandButton value="Listele" action="#{tatlilar.listele}"
-								style="margin-right:20px;width:100%; background-color:#0097A7; color:white" />
-						</h:panelGrid>
-					</h:panelGrid>
-
-				</p:panel>
 
 				<p:panel style="border-color:white">
 					<p:graphicImage
@@ -92,10 +36,10 @@
 				</p:panel>
 
 
-			</h:panelGrid>
+		
 
 		</center>
-	</h:form>
+
 
 
 	<div class="container">
